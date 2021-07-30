@@ -1,0 +1,37 @@
+<div class="row mt-4 mb-2">
+    <div class="col-md-9"></div>
+    <div class="col-md-3">
+        <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Ara" aria-label="Ara">
+            <button class="btn btn-outline-success" type="submit">Ara</button>
+        </form>
+    </div>
+</div>
+<table class="table table-stripped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Proje</th>
+            <th>Açıklama</th>
+            <th>Proje Durum</th>
+            <th>Takım</th>
+            <th>Görevler</th>
+            <th>Sonuc Raporları</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let proje of projes">
+            <td>{{proje.id}}</td>
+            <td>{{proje.proje}}</td>
+            <td>{{proje.aciklama}}</td>
+            <td>{{proje.projeDurum === 1 ? "Aktif" : "Pasif"}}</td>
+            <td>{{proje.takimId}}</td>
+            <td>
+                <p *ngFor="let gorev of proje.gorevs"> <a href="#">{{gorev.gorev}}</a></p>
+            </td>
+            <td>
+                <p *ngFor="let sonucRaporu of proje.sonucRaporus">{{sonucRaporu.aciklama}} </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
