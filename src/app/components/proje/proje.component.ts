@@ -14,6 +14,7 @@ export class ProjeComponent implements OnInit {
 
   ngOnInit(): void {
     this.getProjes();
+    
   }
 
   getProjes(){

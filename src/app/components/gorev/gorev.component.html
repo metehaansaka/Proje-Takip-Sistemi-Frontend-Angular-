@@ -1,1 +1,34 @@
-<p>gorev works!</p>
+<div class="row mt-4 mb-2">
+    <div class="col-md-9"></div>
+    <div class="col-md-3">
+        <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Ara" aria-label="Ara">
+            <button class="btn btn-outline-success" type="submit">Ara</button>
+        </form>
+    </div>
+</div>
+<table class="table table-stripped">
+    
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Görev</th>
+            <th>Açıklama</th>
+            <th>Görev Durum</th>
+            <th>Proje</th>
+            <th>Personel</th>
+            <th>Başlama Tarihi</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let gorev of gorevs">
+            <td>{{gorev.id}}</td>
+            <td>{{gorev.gorev}}</td>
+            <td>{{gorev.aciklama}}</td>
+            <td>{{gorev.gorevDurum === 1 ? "Aktif" : "Pasif"}}</td>
+            <td>{{gorev.proje}}</td>
+            <td>{{gorev.personelId}}</td>
+            <td>{{gorev.baslamaTarihi}} {{gorev.bitisTarihi != null ? - gorev.bitisTarihi : ""}}</td>
+        </tr>
+    </tbody>
+</table>

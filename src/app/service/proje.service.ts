@@ -7,11 +7,17 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ProjeService {
-  apiUrl = "http://localhost:8080/proje/getAll";
+  apiUrl = "http://localhost:8080/proje/";
 
   constructor(private httpClient : HttpClient) { }
 
   getProjes() : Observable<Proje[]>{
-    return this.httpClient.get<Proje[]>(this.apiUrl);
+    let path = this.apiUrl + "getAll";
+    return this.httpClient.get<Proje[]>(path);
+  }
+
+  getProje(id : number): Observable<Proje>{
+    let path = this.apiUrl + "get?id=" + id;
+    return this.httpClient.get<Proje>(path);
   }
 }

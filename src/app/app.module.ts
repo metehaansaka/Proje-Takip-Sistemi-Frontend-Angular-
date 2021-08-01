@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { ProjeComponent } from './components/proje/proje.component';
 import { NaviComponent } from './components/navi/navi.component';
 import { GorevComponent } from './components/gorev/gorev.component';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { GorevComponent } from './components/gorev/gorev.component';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
