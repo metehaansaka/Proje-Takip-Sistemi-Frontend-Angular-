@@ -12,7 +12,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { ProjeFormComponent } from './components/proje-form/proje-form.component';
-import { TakimByProjePipe } from './pipes/takim-by-proje.pipe';
 
 @NgModule({
   declarations: [
@@ -21,8 +20,7 @@ import { TakimByProjePipe } from './pipes/takim-by-proje.pipe';
     NaviComponent,
     GorevComponent,
     SearchPipePipe,
-    ProjeFormComponent,
-    TakimByProjePipe
+    ProjeFormComponent
   ],
   imports: [
     BrowserModule,
