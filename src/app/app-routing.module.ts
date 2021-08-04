@@ -5,7 +5,8 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {path:"projeler", component:ProjeComponent},
-  {path:"gorevler",component:GorevComponent}
+  {path:"gorevler",component:GorevComponent},
+  {path:"gorevler/proje/:projeId", component:GorevComponent}
 ];
 
 @NgModule({

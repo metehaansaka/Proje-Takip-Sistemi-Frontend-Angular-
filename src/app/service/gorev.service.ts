@@ -15,4 +15,9 @@ export class GorevService {
     let path = this.apiUrl + "getAll";
     return this.httpClient.get<Gorev[]>(path);
   }
+
+  getGorevsByProje(id:number) : Observable<Gorev[]>{
+    let path = this.apiUrl + "getAllByProje?id=" + id;
+    return this.httpClient.get<Gorev[]>(path);
+  }
 }

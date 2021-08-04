@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { Proje } from 'src/app/model/proje';
 import { ProjeService } from 'src/app/service/proje.service';
 
@@ -9,8 +10,8 @@ import { ProjeService } from 'src/app/service/proje.service';
 })
 export class ProjeComponent implements OnInit {
   projes : Proje[] = [];
-
-  constructor(private projeService : ProjeService) { }   
+  ara = "";
+  constructor(private projeService : ProjeService, private toastrService:ToastrService) { }   
 
   ngOnInit(): void {
     this.getProjes();
