@@ -1,7 +1,7 @@
 import { Gorev } from "./gorev";
 import { kullanici } from "./kullanici";
 
-export interface personel extends kullanici{
+export interface Personel extends kullanici{
     gorevs : Gorev[];
     takimId : number;
 }

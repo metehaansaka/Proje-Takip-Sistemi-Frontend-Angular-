@@ -25,7 +25,7 @@
             <td>{{proje.proje}}</td>
             <td>{{proje.aciklama}}</td>
             <td>{{proje.projeDurum === 1 ? "Aktif" : "Pasif"}}</td>
-            <td>{{proje.takimId}}</td>
+            <td>{{proje.takimId | takimByProje}}</td>
             <td><button routerLink="/gorevler/proje/{{proje.id}}" class="btn btn-sm btn-primary">Görevler</button></td>
             <td>
                 <p *ngFor="let sonucRaporu of proje.sonucRaporus">{{sonucRaporu.aciklama}} </p>

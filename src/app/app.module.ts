@@ -8,9 +8,11 @@ import { NaviComponent } from './components/navi/navi.component';
 import { GorevComponent } from './components/gorev/gorev.component';
 import { DatePipe } from '@angular/common';
 import { SearchPipePipe } from './pipes/search-pipe.pipe';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { ProjeFormComponent } from './components/proje-form/proje-form.component';
+import { TakimByProjePipe } from './pipes/takim-by-proje.pipe';
 
 @NgModule({
   declarations: [
@@ -18,13 +20,16 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     ProjeComponent,
     NaviComponent,
     GorevComponent,
-    SearchPipePipe
+    SearchPipePipe,
+    ProjeFormComponent,
+    TakimByProjePipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
     FormsModule,
     ToastrModule.forRoot({
       positionClass:"toast-bottom-right"

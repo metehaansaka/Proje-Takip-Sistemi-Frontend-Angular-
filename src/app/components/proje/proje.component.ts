@@ -11,12 +11,14 @@ import { ProjeService } from 'src/app/service/proje.service';
 export class ProjeComponent implements OnInit {
   projes : Proje[] = [];
   ara = "";
+  id = 1;
   constructor(private projeService : ProjeService, private toastrService:ToastrService) { }   
 
   ngOnInit(): void {
     this.getProjes();
     
   }
+
 
   getProjes(){
     this.projeService.getProjes().subscribe(response => {

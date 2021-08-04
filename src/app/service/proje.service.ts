@@ -1,6 +1,6 @@
+import { Proje } from './../model/proje';
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
-import { Proje } from '../model/proje';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -19,5 +19,9 @@ export class ProjeService {
   getProje(id : number): Observable<Proje>{
     let path = this.apiUrl + "get?id=" + id;
     return this.httpClient.get<Proje>(path);
+  }
+
+  add(proje:Proje){
+    return this.httpClient.post(this.apiUrl + "add",proje);
   }
 }
