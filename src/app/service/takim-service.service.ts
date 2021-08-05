@@ -20,4 +20,17 @@ export class TakimServiceService {
     let path = this.apiUrl + "get?id="+id;
     return this.httpClient.get<Takim>(path);
   }
+
+  add(takim : Takim){
+    let path = this.apiUrl + "add";
+    return this.httpClient.post(path,takim);
+  }
+
+  update(takim : Takim){
+    return this.httpClient.put(this.apiUrl + "update",takim);
+  }
+
+  delete(value : number){
+    return this.httpClient.delete(this.apiUrl + "delete?id=" + value);
+  }
 }

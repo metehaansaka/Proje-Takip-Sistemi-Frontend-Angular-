@@ -6,9 +6,14 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class SearchPipePipe implements PipeTransform {
 
-  transform(projes: Proje[], aranan: string): Proje[] {
-    aranan = aranan?aranan.toLocaleLowerCase():"";
-    return aranan?projes.filter((proje:Proje)=>proje.proje.toLocaleLowerCase().indexOf(aranan)!==-1):projes;
-  }
+  transform(value: any, args?: any): any {
+    if(!value)return null;
+    if(!args)return value;
 
+    args = args.toLowerCase();
+
+    return value.filter(function(data: any){
+        return JSON.stringify(data).toLowerCase().includes(args);
+    });
+}
 }

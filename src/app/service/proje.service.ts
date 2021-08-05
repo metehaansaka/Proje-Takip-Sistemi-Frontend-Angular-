@@ -24,4 +24,12 @@ export class ProjeService {
   add(proje:Proje){
     return this.httpClient.post(this.apiUrl + "add",proje);
   }
+
+  update(proje:Proje){
+    return this.httpClient.put(this.apiUrl+"update",proje);
+  }
+
+  delete(id : number){
+    return this.httpClient.delete(this.apiUrl+"delete?id="+id);
+  }
 }

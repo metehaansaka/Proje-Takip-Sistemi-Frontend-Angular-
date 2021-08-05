@@ -14,13 +14,13 @@ export class ProjeComponent implements OnInit {
   projes : Proje[] = [];
   ara = "";
   id = 1;
+  takims : Takim[] = [];
   constructor(private projeService : ProjeService, private takimService : TakimServiceService, private toastrService:ToastrService) { }   
 
   ngOnInit(): void {
     this.getProjes();
     
   }
-  takims : Takim[] = [];
   getProjes(){
     this.projeService.getProjes().subscribe(response => {
       this.takimService.getTakims().subscribe(response => {
@@ -33,11 +33,21 @@ export class ProjeComponent implements OnInit {
 
   getTakim(value : number) : any{
     let str = this.takims.filter(tk =>  tk.id == value);
-    console.log(str);
     if (str.length>0){
 
       return str[0].takim;
     }
+  }
+
+  delete(id : number){
+    this.projeService.delete(id).subscribe(response => {
+      this.projes.forEach((element,index)=>{
+        if(element.id==id) this.projes.splice(index,1);
+     });
+      this.toastrService.success("Silme İşlemi Başarılı");
+    },errorResponse => {
+      this.toastrService.error("Bir Hata Oluştu");
+    });
   }
 
 }

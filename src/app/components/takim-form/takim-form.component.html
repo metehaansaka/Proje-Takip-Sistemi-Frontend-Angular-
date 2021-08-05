@@ -1,0 +1,33 @@
+<div class="content mt-5">
+    <div *ngIf="errorMessage" class="alert alert-danger">
+        {{errorMessage}}
+    </div>
+    <div class="col-md-12">
+        <div class="card">
+             <div class="card-header">
+                    <h3 class="title">Takım Ekle</h3>
+             </div>   
+             <div class="card-body">
+                <form [formGroup] = "takimForm" *ngIf="takimForm">
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" name="takim" id="takim" formControlName="takim" class="form-control" placeholder="Takım" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <textarea id="aciklama" name="aciklama" formControlName="aciklama" class="form-control" rows="10"> </textarea>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+             </div>
+             <div class="card-footer">
+                <button *ngIf="!updateForm"  class="btn btn-success" (click)="add()" >Ekle</button>
+                <button *ngIf="updateForm"  class="btn btn-success" (click)="update()" >Güncelle</button>
+             </div>
+        </div>  
+    </div>
+</div>

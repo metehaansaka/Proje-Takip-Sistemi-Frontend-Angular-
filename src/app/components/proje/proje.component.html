@@ -1,22 +1,28 @@
 <div class="row mt-4 mb-2">
-    <div class="col-md-6"></div>
+    <div class="col-md-6">
+        <div class="col-md-2">
+            <button routerLink="/projeler/add" class="btn btn-sm btn-primary">Yeni Ekle</button>
+        </div>
+    </div>
     <div class="col-md-6">
         <form class="d-flex">
             <input class="form-control me-2" [(ngModel)]="ara" name="ara" type="search" id="ara" placeholder="Ara" aria-label="Ara">
         </form>
     </div>
 </div>
-<table class="table table-stripped">
+<table class="table table-stripped text-center">
     
     <thead>
         <tr>
-            <th>ID</th>
+            <th>#</th>
             <th>Proje</th>
             <th>Açıklama</th>
             <th>Proje Durum</th>
             <th>Takım</th>
             <th>Görevler</th>
             <th>Sonuc Raporları</th>
+            <th></th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -26,9 +32,16 @@
             <td>{{proje.aciklama}}</td>
             <td>{{proje.projeDurum === 1 ? "Aktif" : "Pasif"}}</td>
             <td>{{getTakim(proje.takimId)}}</td>
-            <td><button routerLink="/gorevler/proje/{{proje.id}}" class="btn btn-sm btn-primary">Görevler</button></td>
+            <td><a routerLink="/gorevler/proje/{{proje.id}}">Görevler</a></td>
             <td>
                 <p *ngFor="let sonucRaporu of proje.sonucRaporus">{{sonucRaporu.aciklama}} </p>
+            </td>
+            <td >
+                <button routerLink="/projeler/add/{{proje.id}}" class="btn btn-sm btn-primary">Güncelle</button>
+            </td>
+            <td>
+                
+                <button class="btn btn-sm btn-danger" (click)="delete(proje.id)">Sil</button>
             </td>
         </tr>
     </tbody>

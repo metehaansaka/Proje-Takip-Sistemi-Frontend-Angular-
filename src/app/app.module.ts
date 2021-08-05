@@ -12,6 +12,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { ProjeFormComponent } from './components/proje-form/proje-form.component';
+import { TakimComponent } from './components/takim/takim.component';
+import {MatSelectModule} from "@angular/material/select";
+import {NgxMatSelectModule} from "ngx-mat-select";
+import { TakimFormComponent } from './components/takim-form/takim-form.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +24,9 @@ import { ProjeFormComponent } from './components/proje-form/proje-form.component
     NaviComponent,
     GorevComponent,
     SearchPipePipe,
-    ProjeFormComponent
+    ProjeFormComponent,
+    TakimComponent,
+    TakimFormComponent
   ],
   imports: [
     BrowserModule,
@@ -29,6 +35,8 @@ import { ProjeFormComponent } from './components/proje-form/proje-form.component
     BrowserAnimationsModule,
     ReactiveFormsModule,
     FormsModule,
+    MatSelectModule,
+    NgxMatSelectModule,
     ToastrModule.forRoot({
       positionClass:"toast-bottom-right"
     })
